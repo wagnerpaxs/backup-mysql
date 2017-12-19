@@ -1,5 +1,5 @@
 # backup-mysql
-Shell script to backup your MySQL Databases.
+Shell script to backup your MySQL/MariaDB Databases.
 
 # Usage:
 Edit databases.conf and put database name, one per line.
