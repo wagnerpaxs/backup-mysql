@@ -3,12 +3,14 @@
 # MySQL Database Backup
 #
 # Autor: Wagner Santos <wagner@xarx.co>
-# Version: 0.1
+# Version: 0.2
 
 set -e
 
-if [ -e ./mysql.conf ]; then
-	. ./mysql.conf
+BASEDIR=$(dirname "$0")
+
+if [ -e $BASEDIR/mysql.conf ]; then
+	. $BASEDIR/mysql.conf
 
 	if [ ! -d $BACKUP_PATH ]; then
 		echo "Creating backup directory: $BACKUP_PATH"
