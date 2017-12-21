@@ -3,7 +3,7 @@
 # MySQL Database Backup
 #
 # Autor: Wagner Santos <wagner@xarx.co>
-# Version: 0.2
+# Version: 0.2.1
 
 set -e
 
@@ -19,8 +19,8 @@ if [ -e $BASEDIR/mysql.conf ]; then
 		mkdir -p $BACKUP_PATH/single
 	fi
 
-	if [ -e ./databases.conf ] ; then
-		for DBNAME in `cat databases.conf`; do
+	if [ -e $BASEDIR/databases.conf ] ; then
+		for DBNAME in `cat $BASEDIR/databases.conf`; do
 			if [ ! -d "$BACKUP_PATH/single/$DBNAME" ]; then
 				mkdir -p $BACKUP_PATH/single/$DBNAME
 			fi
